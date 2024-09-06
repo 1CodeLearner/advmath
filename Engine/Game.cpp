@@ -20,6 +20,7 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "Game.h"
+#include "Vec2.h"
 
 Game::Game( MainWindow& wnd )
 	:
@@ -42,4 +43,8 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+	if (wnd.mouse.LeftIsPressed())
+	{
+		gfx.DrawLine({ 100,100 }, { (float)wnd.mouse.GetPosX(), (float)wnd.mouse.GetPosY() }, Colors::Blue);
+	}
 }
